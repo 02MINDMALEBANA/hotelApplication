@@ -1,0 +1,71 @@
+.header{
+    background-color: #F9CAC3;
+
+    display: grid;
+    grid-template-columns: 2fr 2fr ;
+    height: 102px;
+ 
+}
+#link{
+    padding-left: 10%;
+    color: black;
+    font-weight: 500;
+    min-height: 19px;
+    background-color: #F9CAC3;
+    text-decoration: none;
+    background-color: transparent;
+    
+}
+.content{
+    background-color: darkgray;
+    display: flex;
+    flex-direction: column;
+    background-image:url('../mediaContent/lodge.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* height: 909px;
+    width: 1427px; */
+
+}
+.content  div:nth-child(1){
+    /* display: grid;
+    align-items: center; */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 100%;
+    background-color: #d9d9d933;
+    /* opacity: 0.2; */
+    border: solid 5px #F6D8D8;
+    width: 687px;
+    height: 338px;
+
+}
+#myh1{
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+}
+#btnHome{
+    border: solid 1px #F6D8D8;
+    /* background-color: #00000033; */
+    background-color: #F6D8D8;
+    width: 140px;
+    height: 44px;
+    font-weight: bold;
+    /* margin-top: 150px; */
+    margin-right: auto;
+    margin-left: 35%;
+
+
+}
+
+#logo{
+    height: 102px;
+    width: 279px;
+
+}

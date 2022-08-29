@@ -1,0 +1,73 @@
+.services{
+    /* display: flex;
+    flex-direction: row; */
+
+}
+
+.div1{
+    height: 81px;
+    /* width: 1413px; */
+    background-color: #fef5f5;
+    border: solid ;
+}
+.div2{
+    height: 700px;
+    /* width: 1413px; */
+    background-color: #fef5f5;
+    border: solid ;
+    background-image: url('../mediaContent/unnamed.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div3{
+    height: 600px;
+    /* width: 1413px; */
+    background-color: #ffffff;
+    /* border: solid ; */
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+}
+.div3 > div{
+    width: 219px;
+    height: 234px;
+    border: solid;
+    margin-top: 150px;
+    margin-left: 30px;
+
+}
+.div3  div:nth-child(1){
+    background-image: url('../mediaContent/hotelbooking.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.div3  div:nth-child(2){
+    background-image: url('../mediaContent/beds.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div3  div:nth-child(3){
+    background-image: url('../mediaContent/drinks.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div3  div:nth-child(4){
+    background-image: url('../mediaContent/images\ \(3\).jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div4{
+    height:  95px;
+    /* width: 1413px; */
+    background-color: #f6d8d8;
+    border: solid ;
+}
+h3{
+    background-color: #ffffff ;
+    text-align: center;
+    margin-top: 30PX;
+}
+.h3div{
+    background-color: blue ;
+
+}

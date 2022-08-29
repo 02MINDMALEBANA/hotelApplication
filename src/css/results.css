@@ -1,0 +1,51 @@
+
+.output{
+    background-color: #d9d9d9;
+}
+.output1{
+    width: 1700px;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding-top: 0%;
+    background-color: white;
+}
+.results1{
+    height: 115px;
+    background-color: aqua;
+}
+#h1wel{
+    background-color: aqua;
+}
+.detail{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+}
+.rate{
+    height: 66px;
+    width: 40px;
+    margin-top: 18%;
+    margin-left: -100%;
+    /* border: solid; */
+  }
+  .para{
+    font-size: xx-large;
+    font-weight: 1000;
+    margin-left: -15%;
+    background-color: transparent;
+    
+  }
+  .map{
+    margin-left: -80%;
+    margin-top: 0%;
+  }
+  .location{
+    margin-top: 45%;
+    margin-left: -310%;
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .stars{
+    height: 66px;
+    width: 70px;
+   
+  }

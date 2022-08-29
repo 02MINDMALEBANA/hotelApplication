@@ -1,0 +1,58 @@
+.abtBody{
+    background-color: #f5d8d8;
+    margin:auto;
+}
+.homelink{
+    width: 144px;
+    height: 36px;
+    background-color: white;
+    margin-left: 70%;
+    margin-top: 15%;
+
+}
+.about{
+    width: 1117px;
+    height: 743px;
+    background-color: #fef5f5;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin-top: 200px; */
+    margin-bottom: 200px;
+
+
+
+}
+a{
+    background-color: white;
+}
+#p1{
+    text-align: center;
+    font-size: smaller;
+    width: 537px;
+    height: 34px;
+    margin-left: 28px;
+    background-color: #fef5f5;
+
+}
+#p2{
+    text-align: center;
+    font-size: smaller;
+    width: 537px;
+    height: 34px;
+    margin-left: 30%;
+    background-color: #fef5f5;
+
+}
+#p3{
+    text-align: center;
+    font-size: smaller;
+    width: 537px;
+    height: 34px;
+    margin-left: 28px;
+    background-color: #fef5f5;
+
+}
+#h1Abt{
+    text-align: center;
+    background-color: #fef5f5;
+}

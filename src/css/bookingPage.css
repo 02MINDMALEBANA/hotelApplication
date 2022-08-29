@@ -1,0 +1,109 @@
+
+body{
+    background-image: url('../mediaContent/mainback.jfif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #d7ccc8;
+}
+.head{
+    background-color: #DDA979;
+    display: grid;
+    grid-template-columns: 2fr 2fr ;
+    height: 95px;
+    border: solid;
+ 
+}
+#logo2{
+    height: 95px;
+    width: 219px;
+
+}
+.best{
+    height: 142px;
+    background-color: #D9B491;
+}
+#h1best{
+    background-color: #D9B491;
+    text-align: center;
+}
+.inputs{
+    height: 85px;
+    width: 1500px;
+    border-radius: 20px;
+    background-color: white;
+    border: solid;
+    margin-top: -40px;
+    margin-left: 15%;
+}
+input{
+    width: 130px;
+    height: 26px;
+    border-radius: 20px;
+    margin-right: 3px;
+    margin-left: 30px;
+}
+.contents{
+  
+}
+hr{
+    width: 291px;
+    margin-left: 45%;
+    color: #765341;
+}
+#table{
+    padding: 30px;
+    padding-top: 30px;
+    border-style: solid black;
+    width: 1000px;
+    /* background-color: rgb(226, 226, 245); */
+    border-radius: 10px;
+    opacity: 0.9;
+    margin-left: 20%;
+    margin-top: 5%;
+
+}
+#table td{
+    padding-left: 30px;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
+    
+}
+#table img{
+    height: 188px;
+    width: 333px;
+}
+#pic0{
+    height: 188px;
+    width: 333px;
+
+}
+.images{
+    position: relative;
+}
+.hotel{
+    position: absolute;
+    bottom: 20px;
+    background: none;
+    color: white;
+    margin-left: 40px;
+
+
+}
+.display{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+.parentDiv{
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:2rem;
+    padding: 3%;
+    align-self: center;
+   
+   
+padding-left: 15%;  
+}
+.picture{
+    width: 350px;
+    height: 300px;
+}
