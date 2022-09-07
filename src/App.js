@@ -8,7 +8,7 @@ import AboutUS from './components/aboutUs';
 import Services from './components/services';
 import BookingPage from './components/bookingPage';
 import Results from './components/results';
-import logo2 from '../src/mediaContent/download (8).jfif'
+// import logo2 from '../src/mediaContent/download (8).jfif'
 import dp from '../src/mediaContent/unnamed.jpg'
 import star from '../src/mediaContent/star.jfif'
 import beds from '../src/mediaContent/beds.jfif'
@@ -20,87 +20,59 @@ import room3 from '../src/mediaContent/fusion boutique hotel plk.jfif'
 import room4 from '../src/mediaContent/sign.jpg'
                                                             
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {db} from './config/firebase'
-import { addDoc, collection, getDoc, getDocs } from 'firebase/firestore';
+import {auth, db} from './config/firebase'
+import { addDoc, collection, getDoc, getDocs , query, where} from 'firebase/firestore';
 import React, {useEffect, useState} from 'react';
 
 function App() {
 
   const [guesthouse, setGuesthouse]=useState([]);
 
+  const [hotels, setHotels] = useState([])
+      
+  const hotelRef = collection(db, 'hotels')
 
-
-
-  const blog=[{
-    welcome:"Guest room, 2 Twin/Single Bed(s), Garden view, Balcony",
-    price:"1500.00",
-    name:"King Hotel Polokwane",
-    // rating:[star],
-    location: "Polokwane, Polokwanne",
-    map: <img src={icon} className="rate"/>,
-    pic: beds,
-    id: 1
-  },
-  {
-    welcome:"Guest room, 1 Double Bed, Garden view",
-    price:"750.00",
-    name:"Fusion Boutique Hotel",
-    rating:[star],
-    location: "Polokwane, Polokwanne",
-    map: <img src={icon} className="rate"/>,
-    pic:  room3,
-    id: 2
-
-  },
-  {
-    welcome:"Standard room, 1 Single Bed",
-    price:"450.00",
-    name:"Mosate Lodge Polokwane",
-    rating:[star],
-    location: "Polokwane, Polokwanne",
-    map: <img src={icon} className="rate"/>,
-    pic:  room2,
-    id: 3
-
-  },
-  {
-    welcome:"Self Catering Standard, 1 Double Bed, Sleeps 2, Free self parking",
-    price:"900.00",
-    name:"ANEW Hotel Capital",
-    rating:[star],
-    location: "Pretoria",
-    map: <img src={icon} className="rate"/>,
-    pic:  room4,
-    id: 4
-
-
-  },
-  {
-    welcome:"Junior Suite, 1 King Bed, 2 sleeps, Free WIFI",
-    price:"1300.00",
-    name:"King Hotel Polokwane",
-    rating:[star],
-    location: "Polokwane, Polokwanne",
-    map: <img src={icon} className="rate"/>,
-    pic:  room1,
-    id: 5
-  },
-  {
-    welcome:"Deluxe room, Pool, Free WIFI, Free Parking",
-    price:"1000.00",
-    name:"Casta Diva",
-    rating:[star],
-    location: "Pretoria",
-    map: <img src={icon} className="rate"/>,
-    pic:  pool,
-    id: 6
+  const getHotels = async () =>{
+        const data =  await getDocs(hotelRef)
+       
+       
+        console.log('hotels data', data.docs.map((results)=>(results.data())))
+        setHotels( data.docs.map((results)=>({...results.data(), id:results.id})))
   }
- 
-]
+
+    //get booking history
+    const [histories, setHistories]=useState([]);
+    const hotelBooking =collection(db, 'bookingDetails')
+    const getBookingHistory =async() =>{
+      // const userID = auth.currentUser.uid;
+      const userRef = collection(db, 'users')
+      // const q = query(userRef, where('userId', '==', userID))
+     
+
+
+
+      // console.log('user id ===', userID)
+      const data =await getDocs(hotelBooking)
+      console.log(data)
+      data.forEach((results)=>{
+        console.log('my booking history', results.data())
+        setHistories(results.data())
+      })
+      // console.log('booking history', data.docs.map((results)=>({...results.data(), userID:results.userID})))
+      // setHistories(data.docs.map((results)=>({...results.data(), id:results.userID})))
+  
+    }
+
+
+
+
+
 
 //ad database
    useEffect(() => {
-    getdata()
+    // getdata()
+    getHotels()
+    getBookingHistory()
 
   //   const collectHotels = collection(db, 'hotels');
   //   const hotel = {
@@ -120,14 +92,41 @@ function App() {
   //   })
   //     console.log(hotel)
    },[])
-   const getdata= async ()=>{
-    console.log('get')
-    const myhotelcollection = collection(db, "hotels")
-    const data= await getDocs(myhotelcollection)
-    setGuesthouse(data.docs.map((rooms)=>(rooms.data())))
+
+
+
+
+  //  const getdata= async ()=>{
+  //   console.log('get')
+  //   const myhotelcollection = collection(db, "hotels")
+  //   const data= await getDocs(myhotelcollection)
+  //   setGuesthouse(data.docs.map((rooms)=>(rooms.data())))
     
-   }
-   console.log("successfully added", guesthouse)
+  //  }
+
+  //  console.log("hotels", hotels)
+
+  //for booking details
+  const [bookingDetails, setBookingDetails] = useState ([]);
+  useEffect( () => {
+    
+    console.log(bookingDetails);
+  }, [bookingDetails])
+
+  const addBooking=((_checkin, _checkout, _days)=>{
+
+    setBookingDetails((item)=> [...item, {
+      id:item.length,
+      checkin:_checkin,
+      checkout:_checkout,
+      days:_days
+
+
+    }])
+
+    console.log(bookingDetails);
+
+  })
 
 
 
@@ -142,10 +141,10 @@ function App() {
         <Route path="/about" component={AboutUS}></Route>
         <Route path="/service" component={Services}></Route>
         <Route path="/booking" >
-          <BookingPage  blog={blog} />
+          <BookingPage  blog={hotels} />
         </Route>
         <Route path="/blog/:id">
-          <Results blog={blog} />
+          <Results blog={hotels} book={addBooking} booking={bookingDetails}/>
         </Route>
      
 

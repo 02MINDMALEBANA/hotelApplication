@@ -29,8 +29,8 @@ function Login(){
         <div id="log">
             <div className='login'>
                 <p id='loginform'>LOGIN FORM</p>
-                <input id='myinputs' placeholder='Enter your Email' onChange={(e)=>setEmail(e.target.value)}/><br></br>
-                <input id='myinputs' placeholder='Enter your Password' onChange={(e)=>setPasssword(e.target.value)}/><br></br>
+                <input id='myinputs' placeholder='Enter your Email' onChange={(e)=>setEmail(e.target.value)} type='email'/><br></br>
+                <input id='myinputs' placeholder='Enter your Password' onChange={(e)=>setPasssword(e.target.value)} type='password'/><br></br>
                 <br></br>
                 <span style={{marginLeft:'120px'}}>Forgot Password?
                     <Link to="/forgot">Click here to create a new one!</Link>

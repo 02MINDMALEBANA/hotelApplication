@@ -1,12 +1,16 @@
 
 .output{
-    background-color: #d9d9d9;
+    background-color: #f3f2fa;
+    height: 100%;
+  
+    
 }
 .output1{
     width: 1700px;
     margin-top: 5%;
     margin-left: 5%;
     padding-top: 0%;
+
     background-color: white;
 }
 .results1{
@@ -15,6 +19,7 @@
 }
 #h1wel{
     background-color: aqua;
+ 
 }
 .detail{
     display: grid;
@@ -30,17 +35,18 @@
   .para{
     font-size: xx-large;
     font-weight: 1000;
-    margin-left: -15%;
+    margin-left: -20%;
     background-color: transparent;
     
   }
   .map{
-    margin-left: -80%;
-    margin-top: 0%;
+    margin-left: -250%;
+    margin-top: 30%;
+   
   }
   .location{
     margin-top: 45%;
-    margin-left: -310%;
+    margin-left: -320%;
     font-size: larger;
     font-weight: bolder;
   }
@@ -49,3 +55,15 @@
     width: 70px;
    
   }
+  .price{
+    
+  }
+.history{
+  height: 400px;
+  width: 600px;
+
+  margin-left: 30%;
+}
+.detailsB h3{
+  background-color: #f3f2fa;
+}
